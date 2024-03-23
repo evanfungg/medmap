@@ -49,7 +49,7 @@ export default function Home() {
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p>EVANt Fungs features and API.</p>
+          <p>EVANt Funfeatures and API.</p>
         </a>
 
         <a
@@ -86,7 +86,7 @@ export default function Home() {
             Deploy <span>-&gt;</span>
           </h2>
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Instantly deploy your Next.js te to a shareable URL with Vercel.
           </p>
         </a>
       </div>
