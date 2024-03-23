@@ -49,7 +49,7 @@ export default function Home() {
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p>EVANt Next.js features and API.</p>
+          <p>EVANt Fungs features and API.</p>
         </a>
 
         <a
