@@ -77,7 +77,7 @@ input[type="text"] {
 }
 
 input[type="text"]::placeholder {
-    color: rgb(220, 215, 215);
+    color: rgb(0, 0, 0);
 }
 
 .submit {
@@ -111,14 +111,14 @@ input[type="text"]::placeholder {
 }
 
 #advil {
-    width: 250px;
+    width: 200px;
 }
 
 #arrow {
-    width: 300px;
+    width: 250px;
 }
 #ibu {
-    width: 400px;
+    width: 300px;
 }
 
 
