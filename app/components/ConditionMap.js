@@ -65,15 +65,34 @@ const ConditionMap = ({ data, id }) => {
       .append('g')
       .attr('class', 'node');
 
-    node.filter(d => d.group === 1)
-      .append('circle')
-      .attr('r', 20) // Reduced size for better spacing
-      .style('fill', 'lightblue'); // Adjust color as needed
+    //node.filter(d => d.group === 1)
+    //  .append('circle')
+    //  .attr('r', 20) // Reduced size for better spacing
+    //  .style('fill', 'lightgreen'); // Adjust color as needed
 
     node.filter(d => d.group === 0)
       .append('circle')
       .attr('r', d => 75 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
-      .style('fill', 'blue');
+      .style('fill', 'green');
+
+    node.each(function (d) {
+      if (d.group === 1) {
+        const pie = d3.pie();
+        const arc = d3.arc().innerRadius(0).outerRadius(20);
+        const g = d3.select(this)
+          .selectAll('.arc')
+          .data(pie(d.pieData))
+          .enter().append('g')
+          .attr('class', 'arc');
+    
+        g.append('path')
+          .attr('d', arc)
+          .style('fill', (piePart) => {
+            // Check if piePart.data is effective or not and assign color accordingly
+            return piePart.data === d.pieData[0] ? 'green' : 'red';
+          });
+      }
+    });    
 
     node.append('text')
       .text(d => d.id)
