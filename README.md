@@ -14,6 +14,8 @@ pnpm dev
 # or
 bun dev
 ```
+install moogose!
+note .env 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
