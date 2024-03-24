@@ -14,13 +14,11 @@ def home():
     return "Welcome to the MedNet"
 
 
-
 @app.route('/flask/web-search', methods=['POST'])
 def web_search():
     data = request.get_json()
-    search_query = data['searchQuery']  # Assuming the React client sends a JSON with 'searchQuery'
+    search_query = data['searchQuery']  
 
-    # Use Cohere's chat method with the web-search connector
     response = co.chat(
         model="command",
         message=f"""
