@@ -1,66 +1,46 @@
 'use client'
+import { useState, useEffect } from 'react';
 import ConditionMap from '../components/ConditionMap';
 
-export default function Home() {
-  
+const getConditions = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/conditions", {
+      cache: "no-store",
+    });
 
-  const data2 = {
-  "conditions": [
-    {
-      "condition": "Hypertension",
-      "medications": [
-        {
-          "name": "Lisinopril",
-          "is_effective": [false, true, false]
-        },
-        {
-          "name": "Amlodipine",
-          "is_effective": [true, false, true]
-        },
-        {
-          "name": "Hydrochlorothiazide",
-          "is_effective": [true, false, true]
-        }
-      ]
-    },
-    
-    {
-      "condition": "Diabetes",
-      "medications": [
-        {
-          "name": "Metformin",
-          "is_effective": [true, true, false]
-        },
-        {
-          "name": "Glipizide",
-          "is_effective": [false, true, true]
-        },
-        {
-          "name": "Insulin",
-          "is_effective": [true, true, true]
-        }
-      ]
+    if (!res.ok) {
+      throw new Error("Failed to fetch topics");
     }
-   
-  ]
+    
+    return res.json();
+
+  } catch (error) {
+    console.log("Error loading topics: ", error);
+  }
 };
 
-  
-  
-  
+export default function Home() {
+  const [data1, setData1] = useState([]);
 
- 
+  useEffect(() => {
+    const fetchData = async () => {
+      const conditionsData = await getConditions();
+      setData1(conditionsData);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <main>
-hello
-{data2.conditions.map((conditionData, index) => (
-        
+      hello
+
+      {data1.map((conditionData, index) => (
         <div key={index}>
           <ConditionMap data={conditionData} id={index} />
         </div>
       ))}
-      
+
     </main>
   );
 }
