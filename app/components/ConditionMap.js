@@ -33,11 +33,11 @@ const ConditionMap = ({ data, id }) => {
     });
 
     const links = data.medications.map((medication) => ({
-      source: data.condition,
+      source: data.name,
       target: medication.name,
     }));
 
-    nodes.unshift({ id: data.condition, group: 0 });
+    nodes.unshift({ id: data.name, group: 0 });
 
     const link = svg.selectAll('.link')
       .data(links)
