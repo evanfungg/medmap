@@ -14,7 +14,7 @@ const getConditions = async () => {
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
     }
-    
+
     return res.json();
   } catch (error) {
     console.log("Error loading topics: ", error);
@@ -35,11 +35,20 @@ export default function Home() {
   }, []);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length); 
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
   };
 
   const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length); 
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
+  };
+
+  // pop up stuff
+  const [showPopup, setShowPopup] = useState(false);
+  const openPopup = () => {
+    setShowPopup(true);
+  };
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -47,14 +56,25 @@ export default function Home() {
       <NavBar />
       {data.length > 0 && (
         <div className="graphContainer">
-          <button onClick={handlePrevious}>&lt;</button> 
+          <button onClick={handlePrevious}>&lt;</button>
           <div className="graphCard">
             <ConditionMap data={data[currentIndex]} id={currentIndex} />
           </div>
-          <button onClick={handleNext}>&gt;</button> 
+          <button onClick={handleNext}>&gt;</button>
         </div>
       )}
-        <AddForm/>
+      <div>
+        <button onClick={openPopup}>Add Condition</button>
+        {showPopup && (
+          <div className="popup">
+            <div className="popup-content">
+              <span className="close" onClick={closePopup}>&times;</span>
+              <h2>Select a condition</h2>
+              <AddForm />
+            </div>
+          </div>
+        )}
+      </div>
     </main>
   );
 }
