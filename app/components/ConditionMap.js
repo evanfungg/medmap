@@ -75,7 +75,7 @@ const ConditionMap = ({ data, id }) => {
         const pie = d3.pie();
         const arc = d3.arc()
           .innerRadius(0)
-          .outerRadius(Math.max(...d.pieData) * Math.sqrt(nameNode.effectiveness) * 8);
+          .outerRadius(Math.max(...d.pieData) * Math.sqrt(nameNode.effectiveness) * 5);
         const g = d3.select(this)
           .selectAll('.arc')
           .data(pie(d.pieData))
