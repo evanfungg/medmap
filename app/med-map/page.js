@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className = 'main'>
       <NavBar />
       {data.length > 0 && (
         <div className="graphContainer">
@@ -69,7 +69,7 @@ export default function Home() {
           <div className="popup">
             <div className="popup-content">
               <span className="close" onClick={closePopup}>&times;</span>
-              <h2>Add Condition</h2>
+              <h2>Select a condition</h2>
               <AddForm />
             </div>
           </div>

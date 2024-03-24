@@ -1,0 +1,26 @@
+.main {
+    background: linear-gradient(to bottom, #24a87a47, #2a8c4b2c);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+.content {
+    align-self: center;
+    margin-top: 300px;
+    text-shadow: #24a87a47;
+    font-family: 'Montserrat', sans-serif; 
+    color: #333333; 
+    font-size: 2.5em; 
+    font-weight: 900; 
+    line-height: 1.2; 
+    text-align: center; 
+    text-transform: uppercase; 
+    text-shadow: 2px 2px 4px rgba(36, 168, 122, 0.28); 
+    align-self: center;
+    margin-top: 300px; 
+    max-width: 80%; 
+    word-wrap: break-word; 
+}
+
