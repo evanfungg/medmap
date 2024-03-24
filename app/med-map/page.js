@@ -67,11 +67,16 @@ export default function Home() {
         <div className="popup">
           <button onClick={openPopup}>Add Condition</button>
           {showPopup && (
-            <div className="popup-content">
-              <span className="close" onClick={closePopup}>&times;</span>
+        <div className="popup-backdrop" onClick={closePopup}>
+          <div className="popup-box" onClick={e => e.stopPropagation()}>
+            <div className="popup-header">
               <h2>Select a condition</h2>
-              <AddForm />
-            </div>)}
+              <button className="popup-close" onClick={closePopup}>&times;</button>
+            </div>
+            <AddForm />
+          </div>
+        </div>
+      )}
           </div>
       </div>
     </main>

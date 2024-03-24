@@ -96,24 +96,26 @@ export default function AddForm({ onSubmit }) {
     
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Choose a condition:
-                <select value={selectedCondition} onChange={handleConditionChange}>
-                    <option value="">Select</option>
-                    {conditions.map((condition) => (
-                        <option key={condition._id} value={condition._id}>{condition.name}</option>
-                    ))}
-                </select>
-            </label>
-            <br />
+        <form onSubmit={handleSubmit} className="popup-form">
+            <div className="form-group">
+                <label>
+                    Choose a condition:
+                    <select value={selectedCondition} onChange={handleConditionChange} className="form-control">
+                        <option value="">Select</option>
+                        {conditions.map((condition) => (
+                            <option key={condition._id} value={condition._id}>{condition.name}</option>
+                        ))}
+                    </select>
+                </label>
+            </div>
             {medications.map((medication, index) => (
-                <div key={index}>
+                <div key={index} className="form-group">
                     <label>
                         {medication.name} - Is Effective?:
                         <select
                             value={medication.isEffective || ''}
                             onChange={(e) => handleMedicationChange(index, e.target.value === 'true')}
+                            className="form-control"
                         >
                             <option value="">Select</option>
                             <option value="true">Yes</option>
@@ -122,7 +124,9 @@ export default function AddForm({ onSubmit }) {
                     </label>
                 </div>
             ))}
-            <button type="submit">Submit</button>
+            <div className="form-actions">
+                <button type="submit" className="btn">Submit</button>
+            </div>
         </form>
     );
 }
