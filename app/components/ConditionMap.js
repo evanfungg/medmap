@@ -65,15 +65,12 @@ const ConditionMap = ({ data, id }) => {
       .append('g')
       .attr('class', 'node');
 
-    //node.filter(d => d.group === 1)
-    //  .append('circle')
-    //  .attr('r', 20) // Reduced size for better spacing
-    //  .style('fill', 'lightgreen'); // Adjust color as needed
-
     node.filter(d => d.group === 0)
       .append('circle')
       .attr('r', d => 75 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
-      .style('fill', 'green');
+
+      .style('fill', '#2a8c4a');
+
 
     node.each(function (d) {
       if (d.group === 1) {
@@ -93,6 +90,7 @@ const ConditionMap = ({ data, id }) => {
           });
       }
     });    
+
 
     node.append('text')
       .text(d => d.id)
@@ -133,3 +131,4 @@ const ConditionMap = ({ data, id }) => {
 }; 
 
 export default ConditionMap;
+
