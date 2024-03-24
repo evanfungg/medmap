@@ -95,40 +95,41 @@ export default function Home() {
     return (
         <main className="main">
             <NavBar></NavBar>
-            <h1 className="title">Medication Search</h1> 
+            <h3 className="title">Medication Search</h3> 
             <form className="form-container" onSubmit={handleWebSearchSubmit}>
+            <img src="https://as2.ftcdn.net/v2/jpg/03/95/44/63/1000_F_395446381_K3EettzZKGvCWlUSGM8GfzRvCkoXNOgX.jpg" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" className="image" id="ASA"/>
                 <input
                     type="text"
-                    placeholder="Enter Generic (Scientific) Name of Medication"
+                    placeholder="Enter Generic (Scientific) Name of Medication (eg. Ibuprofen)"
                     onChange={(e) => setSearchQuery(e.target.value)}
                     // onKeyDown={handleWebSearchInputKeyDown}
                     value={searchQuery}
                 />
-                <button className="submit" type="submit">Search</button>
+                
+                    <button className="submit" type="submit">Search</button>
+                    <img src="https://www.cancer.gov/sites/g/files/xnrzdm211/files/styles/cgov_article/public/cgov_image/media_image/2021-01/iStock-458563393.jpg" className="image" id="aspirin"/>
+                
             </form>
             <div className="search-result">{searchResult}</div> 
             {/* {searchResult} */}
 
+            
             <form className="form-container" onSubmit={handleClientSearchSubmit}>
+            <img src="https://www.duffystric.com/var/images/product/500.500/D/4614-01.jpg" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" className="image" id="advil"/>
                 <input
                     type="text"
-                    placeholder="Enter Brand Name of Medication"
+                    placeholder="Enter Brand Name of Medication (eg. Advil)"
                     onChange={(e) => setClientSearchQuery(e.target.value)}
                     // onKeyDown={handleClientSearchInputKeyDown}
                     value={clientSearchQuery}
                 />
-                <button className="submit" type="submit">Search</button>
-            </form>
-            <div className="search-result">{clientSearchResult}</div>
-            <div className="image-container">
-                <img src="https://www.duffystric.com/var/images/product/500.500/D/4614-01.jpg" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" className="image" id="advil"/>
-                <img src="https://symbols.getvecta.com/stencil_195/15_right-arrow.a0745525dc.svg" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" className="image" id="arrow"/>
                 
-                <img src="https://www.researchgate.net/profile/Murad-Abualhasan/publication/270283844/figure/fig1/AS:613968762642434@1523392968418/Chemical-structure-of-Ibuprofen.png" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" className="image" id="ibu"/>
-            </div>
-            {/* <img className="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" alt="" />
-            <img className="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" alt="" /> */}
-            {/* {clientSearchResult} */}
+                    <button className="submit" type="submit">Search</button>
+                    <img src="https://www.researchgate.net/profile/Murad-Abualhasan/publication/270283844/figure/fig1/AS:613968762642434@1523392968418/Chemical-structure-of-Ibuprofen.png" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pill_1.jpg/1200px-Pill_1.jpg" className="image" id="ibu"/>
+                
+            </form>
+            <div className="search-result2">{clientSearchResult}</div>
+            
         </main>
     );
 }
