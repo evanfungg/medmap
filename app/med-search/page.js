@@ -11,6 +11,7 @@ export default function Home() {
 
     const handleWebSearchSubmit = async (event) => {
         event.preventDefault();
+        alert("Retrieving brand name: please wait");
 
         const response = await fetch('http://127.0.0.1:5328/flask/web-search', {
             method: 'POST',
@@ -24,6 +25,7 @@ export default function Home() {
 
     const handleClientSearchSubmit = async (event) => {
         event.preventDefault();
+        alert("Retrieving generic name (scientific) : please wait");
 
         
         const clientSearchResponse = await fetch('http://127.0.0.1:5328/flask/client-search', {
