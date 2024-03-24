@@ -85,7 +85,7 @@ export default function Home() {
             <form className="form-container" onSubmit={handleWebSearchSubmit}>
                 <input
                     type="text"
-                    placeholder="Enter Scientific Name of Medication"
+                    placeholder="Enter Generic (Scientific) Name of Medication"
                     onChange={(e) => setSearchQuery(e.target.value)}
                     value={searchQuery}
                 />
@@ -96,7 +96,7 @@ export default function Home() {
             <form className="form-container" onSubmit={handleClientSearchSubmit}>
                 <input
                     type="text"
-                    placeholder="Enter Generic or Brand Name of Medication"
+                    placeholder="Enter Brand Name of Medication"
                     onChange={(e) => setClientSearchQuery(e.target.value)}
                     value={clientSearchQuery}
                 />
