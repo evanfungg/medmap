@@ -1,5 +1,5 @@
 'use client'
-import NavBar from "./components/NavBar.js"
+import ConditionMap from '../components/ConditionMap';
 
 export default function Home() {
   
@@ -53,9 +53,13 @@ export default function Home() {
 
   return (
     <main>
-      homepage
-      <NavBar></NavBar>
-
+hello
+{data2.conditions.map((conditionData, index) => (
+        
+        <div key={index}>
+          <ConditionMap data={conditionData} id={index} />
+        </div>
+      ))}
       
     </main>
   );
