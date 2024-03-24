@@ -53,9 +53,8 @@ export default function Home() {
           </div>
           <button onClick={handleNext}>&gt;</button> 
         </div>
-      ))}
-        <AddForm/>
       )}
+        <AddForm/>
     </main>
   );
 }
