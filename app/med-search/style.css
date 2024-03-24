@@ -46,16 +46,24 @@ input[type="text"]::placeholder {
 }
 
 .submit {
-    height: 30px;
-    padding: 5px 20px;
+    background-color: #2a8c4a;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
     border: none;
-    border-radius: 5px;
-    background-color: #20a384;
-    color: #ffffff;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px 0 rgba(0, 123, 255, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    outline: none;
+    flex: none; 
+    text-align: center;
     margin-right: 30px;
-    transition: background-color 0.3s ease;
 }
+
+
 
 .submit:hover {
     background-color: #0056b3;

@@ -91,7 +91,7 @@
   .popup-header {
     font-size: 24px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,4 +135,24 @@
   }
   
 
-  
+  .add-button {
+    background-color: #2a8c4a;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px 0 rgba(0, 123, 255, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    outline: none;
+    flex: none; 
+    text-align: center;
+
+  }
+
+  .add-button:hover {
+    background-color: #1cb719d4;
+}
