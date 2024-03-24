@@ -7,9 +7,9 @@ const ConditionMap = ({ data, id }) => {
     d3.select(`#${containerId}`).select('svg').remove();
 
     const width = 800; // Increased width for better visualization
-    const height = 200; // Increased height for better visualization
+    const height = 600; // Increased height for better visualization
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
-    const padding = 1; // Padding to keep nodes within SVG boundaries
+    const padding = 20; // Padding to keep nodes within SVG boundaries
 
     const svg = d3.select(`#${containerId}`)
       .append('svg')
