@@ -1,48 +1,4 @@
 'use client'
-// import React, { useState } from 'react';
-
-
-// export default function Home() {
-//     const [searchQuery, setSearchQuery] = useState('');
-//     const [searchResult, setSearchResult] = useState('');
-    
-
-     
-      
-    
-
-//     const handleSubmit = async (event) => {
-//         event.preventDefault();
-
-//         const response = await fetch('http://127.0.0.1:5328/flask/web-search', {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify({ searchQuery: searchQuery }),
-//         });
-
-//         const data = await response.json();
-//         setSearchResult(data.text);
-
-
-
-        
-//     };
-
-//     return (
-//         <main className="main">
-//             <form className="form-container" onSubmit={handleSubmit}>
-//                     <input
-//                         type="text"
-//                         placeholder="Enter search query"
-//                         onChange={(e) => setSearchQuery(e.target.value)}
-//                         value={searchQuery}
-//                     />
-//                     <button className="submit" type="submit">Search the Web</button>
-//                 </form>
-//                 {searchResult}
-//         </main>
-//     );
-// }
 import React, { useState } from 'react';
 import './style.css';
 import NavBar from "../components/NavBar.js"
@@ -80,17 +36,6 @@ export default function Home() {
         setClientSearchResult(clientSearchData.text);
     };
 
-    // const handleWebSearchInputKeyDown = (event) => {
-    //     if (event.key === 'Enter') {
-    //         handleWebSearchSubmit();
-    //     }
-    // };
-
-    // const handleClientSearchInputKeyDown = (event) => {
-    //     if (event.key === 'Enter') {
-    //         handleClientSearchSubmit();
-    //     }
-    // };
 
     return (
         <main className="main">
@@ -102,7 +47,7 @@ export default function Home() {
                     type="text"
                     placeholder="Enter Generic (Scientific) Name of Medication (eg. Ibuprofen)"
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    // onKeyDown={handleWebSearchInputKeyDown}
+                    
                     value={searchQuery}
                 />
                 
@@ -111,7 +56,7 @@ export default function Home() {
                 
             </form>
             <div className="search-result">{searchResult}</div> 
-            {/* {searchResult} */}
+            
 
             
             <form className="form-container" onSubmit={handleClientSearchSubmit}>
@@ -120,7 +65,6 @@ export default function Home() {
                     type="text"
                     placeholder="Enter Brand Name of Medication (eg. Advil)"
                     onChange={(e) => setClientSearchQuery(e.target.value)}
-                    // onKeyDown={handleClientSearchInputKeyDown}
                     value={clientSearchQuery}
                 />
                 
