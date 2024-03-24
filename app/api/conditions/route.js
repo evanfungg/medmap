@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // add data to db
 export async function POST(request) {
     const {name, medications} = await request.json();
-    console.log(medications);
+    
     await connectMongoDB();
     await Condition.create({name, medications});
     return NextResponse.json(

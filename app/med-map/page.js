@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import ConditionMap from '../components/ConditionMap';
+import AddForm from '../components/AddForm';
 import NavBar from '../components/NavBar.js';
 import './styles.css';
 
@@ -52,6 +53,8 @@ export default function Home() {
           </div>
           <button onClick={handleNext}>&gt;</button> 
         </div>
+      ))}
+        <AddForm/>
       )}
     </main>
   );
