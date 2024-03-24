@@ -111,6 +111,6 @@ const ConditionMap = ({ data, id }) => {
   }, [data, id]); 
 
   return <div id={`condition-map-container-${id}`}></div>;
-};
+}; 
 
 export default ConditionMap;
