@@ -14,7 +14,6 @@ def home():
     return "Welcome to the MedNet"
 
 
-
 @app.route('/flask/web-search', methods=['POST'])
 def web_search():
     data = request.get_json()

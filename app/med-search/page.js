@@ -62,8 +62,6 @@ export default function Home() {
         });
 
         const data = await response.json();
-        // const otherNames = data.text ? Object.values(data.text).join(", ") : '';
-        // setSearchResult(otherNames ? `Other names are: ${otherNames}` : 'No other names found.');
         setSearchResult(data.text);
     };
 
