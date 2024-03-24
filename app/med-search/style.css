@@ -1,42 +1,4 @@
-/* body {
-    background-color: #974242; 
-}
 
-
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.form-container {
-    margin-bottom: 20px;
-}
-
-.form-container input {
-    width: 300px; 
-    height: 40px; 
-    margin-right: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form-container button {
-    height: 40px; 
-    padding: 0 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.form-container button:hover {
-    background-color: #0056b3;
-} */
 
 body, html {
     margin: 0;
