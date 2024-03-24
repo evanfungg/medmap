@@ -1,6 +1,9 @@
 'use client'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ConditionMap from '../components/ConditionMap';
+import AddForm from '../components/AddForm';
+import NavBar from '../components/NavBar.js';
+import './styles.css';
 
 const getConditions = async () => {
   try {
@@ -13,34 +16,45 @@ const getConditions = async () => {
     }
     
     return res.json();
-
   } catch (error) {
     console.log("Error loading topics: ", error);
   }
 };
 
 export default function Home() {
-  const [data1, setData1] = useState([]);
+  const [data, setData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       const conditionsData = await getConditions();
-      setData1(conditionsData);
+      setData(conditionsData);
     };
 
     fetchData();
   }, []);
 
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length); 
+  };
+
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length); 
+  };
+
   return (
     <main>
-      hello
-
-      {data1.map((conditionData, index) => (
-        <div key={index}>
-          <ConditionMap data={conditionData} id={index} />
+      <NavBar />
+      {data.length > 0 && (
+        <div className="graphContainer">
+          <button onClick={handlePrevious}>&lt;</button> 
+          <div className="graphCard">
+            <ConditionMap data={data[currentIndex]} id={currentIndex} />
+          </div>
+          <button onClick={handleNext}>&gt;</button> 
         </div>
-      ))}
-
+      )}
+        <AddForm/>
     </main>
   );
 }

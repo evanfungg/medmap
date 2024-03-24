@@ -45,6 +45,7 @@
 // }
 import React, { useState } from 'react';
 import './style.css';
+import NavBar from "../components/NavBar.js"
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -93,6 +94,7 @@ export default function Home() {
 
     return (
         <main className="main">
+            <NavBar></NavBar>
             <h1 className="title">Medication Search</h1> 
             <form className="form-container" onSubmit={handleWebSearchSubmit}>
                 <input

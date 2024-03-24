@@ -7,9 +7,9 @@ const ConditionMap = ({ data, id }) => {
     d3.select(`#${containerId}`).select('svg').remove();
 
     const width = 800; // Increased width for better visualization
-    const height = 600; // Increased height for better visualization
+    const height = 200; // Increased height for better visualization
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
-    const padding = 20; // Padding to keep nodes within SVG boundaries
+    const padding = 1; // Padding to keep nodes within SVG boundaries
 
     const svg = d3.select(`#${containerId}`)
       .append('svg')
@@ -50,7 +50,7 @@ const ConditionMap = ({ data, id }) => {
     const links = nodes.map((medication) => ({
       source: nameNode,
       target: medication,
-      distance: (1 - (medication.count / maxCount)) * 150 // Adjusted distance formula
+      distance: (1.5 - (medication.count / maxCount)) * 250 // Adjusted distance formula
     }));
 
     const link = svg.selectAll('.link')
@@ -65,15 +65,32 @@ const ConditionMap = ({ data, id }) => {
       .append('g')
       .attr('class', 'node');
 
-    node.filter(d => d.group === 1)
-      .append('circle')
-      .attr('r', 10) // Reduced size for better spacing
-      .style('fill', 'lightblue'); // Adjust color as needed
-
     node.filter(d => d.group === 0)
       .append('circle')
-      .attr('r', d => 20 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
-      .style('fill', 'blue');
+      .attr('r', d => 75 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
+
+      .style('fill', '#2a8c4a');
+
+
+    node.each(function (d) {
+      if (d.group === 1) {
+        const pie = d3.pie();
+        const arc = d3.arc().innerRadius(0).outerRadius(20);
+        const g = d3.select(this)
+          .selectAll('.arc')
+          .data(pie(d.pieData))
+          .enter().append('g')
+          .attr('class', 'arc');
+    
+        g.append('path')
+          .attr('d', arc)
+          .style('fill', (piePart) => {
+            // Check if piePart.data is effective or not and assign color accordingly
+            return piePart.data === d.pieData[0] ? 'green' : 'red';
+          });
+      }
+    });    
+
 
     node.append('text')
       .text(d => d.id)
@@ -82,7 +99,7 @@ const ConditionMap = ({ data, id }) => {
       .style('font-size', function(d) {
         const radius = d.group === 0 ? 20 * Math.sqrt(nameNode.effectiveness) : 10;
         const maxLength = Math.sqrt(Math.pow(radius, 2) / 2); // Max length to fit in circle diagonally
-        const fontSize = Math.min(2 * radius, (2 * radius - 8) / this.getComputedTextLength() * 24, maxLength / this.getComputedTextLength() * 24);
+        const fontSize = Math.min(5 * radius, (5 * radius - 2) / this.getComputedTextLength() * 72, maxLength / this.getComputedTextLength() * 72);
         return fontSize + 'px';
       });
 
@@ -114,3 +131,4 @@ const ConditionMap = ({ data, id }) => {
 }; 
 
 export default ConditionMap;
+
