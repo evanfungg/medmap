@@ -44,6 +44,7 @@
 //     );
 // }
 import React, { useState } from 'react';
+import NavBar from "../components/NavBar.js"
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -82,6 +83,7 @@ export default function Home() {
 
     return (
         <main className="main">
+            <NavBar></NavBar>
             <form className="form-container" onSubmit={handleWebSearchSubmit}>
                 <input
                     type="text"
