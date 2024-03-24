@@ -1,5 +1,8 @@
 'use client'
+import NavBar from '../components/NavBar.js';
 import React, { useState } from 'react';
+
+
 
 
 export default function Home() {
@@ -39,6 +42,7 @@ export default function Home() {
                     />
                     <button className="submit" type="submit">Search the Web</button>
                 </form>
+                <NavBar></NavBar>
                 {searchResult}
         </main>
     );
