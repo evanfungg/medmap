@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import ConditionMap from '../components/ConditionMap';
+import AddForm from '../components/AddForm';
 
 const getConditions = async () => {
   try {
@@ -40,7 +41,7 @@ export default function Home() {
           <ConditionMap data={conditionData} id={index} />
         </div>
       ))}
-
+        <AddForm/>
     </main>
   );
 }
