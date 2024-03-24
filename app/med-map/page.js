@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <main className = 'main'>
+    <main className='main'>
       <NavBar />
       {data.length > 0 && (
         <div className="graphContainer">
@@ -64,16 +64,15 @@ export default function Home() {
         </div>
       )}
       <div>
-        <button onClick={openPopup}>Add Condition</button>
-        {showPopup && (
-          <div className="popup">
+        <div className="popup">
+          <button onClick={openPopup}>Add Condition</button>
+          {showPopup && (
             <div className="popup-content">
               <span className="close" onClick={closePopup}>&times;</span>
               <h2>Select a condition</h2>
               <AddForm />
-            </div>
+            </div>)}
           </div>
-        )}
       </div>
     </main>
   );
