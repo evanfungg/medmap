@@ -9,7 +9,7 @@ const ConditionMap = ({ data, id }) => {
     const width = 800; // Increased width for better visualization
     const height = 600; // Increased height for better visualization
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
-    const padding = 20; // Padding to keep nodes within SVG boundaries
+    const padding = 1; // Padding to keep nodes within SVG boundaries
 
     const svg = d3.select(`#${containerId}`)
       .append('svg')
@@ -67,15 +67,15 @@ const ConditionMap = ({ data, id }) => {
 
     node.filter(d => d.group === 0)
       .append('circle')
-      .attr('r', d => 75 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
-
+      .attr('r', d => 85 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
       .style('fill', '#2a8c4a');
-
 
     node.each(function (d) {
       if (d.group === 1) {
         const pie = d3.pie();
-        const arc = d3.arc().innerRadius(0).outerRadius(20);
+        const arc = d3.arc()
+          .innerRadius(0)
+          .outerRadius(Math.max(...d.pieData) * Math.sqrt(nameNode.effectiveness) * 8);
         const g = d3.select(this)
           .selectAll('.arc')
           .data(pie(d.pieData))
@@ -90,7 +90,6 @@ const ConditionMap = ({ data, id }) => {
           });
       }
     });    
-
 
     node.append('text')
       .text(d => d.id)
