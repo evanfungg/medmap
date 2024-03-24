@@ -1,0 +1,129 @@
+/* body {
+    background-color: #974242; 
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-container input {
+    width: 300px; 
+    height: 40px; 
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    height: 40px; 
+    padding: 0 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+} */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: rgb(227, 223, 223);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(227, 223, 223);
+    padding-top: 40px; 
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; 
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px; 
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+input[type="text"] {
+    width: 400px;
+    height: 30px;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+input[type="text"]::placeholder {
+    color: rgb(220, 215, 215);
+}
+
+
+.submit {
+    height: 30px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #0056b3;
+}
+
+.search-result {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.image {
+    height: auto; 
+    margin-right: 40px;
+    border-radius: 15px;
+    
+}
+
+#advil {
+    width: 250px;
+}
+
+#arrow {
+    width: 300px;
+}
+#ibu {
+    width: 400px;
+}
+
+
+
+
+
+
