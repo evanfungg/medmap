@@ -36,9 +36,9 @@
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
-    position: fixed;
+    position: absolute;
     z-index: 1;
-    top: 50%;
+    top: 65%;
     right: 20px; 
     transform: translate(0, -50%); 
 }
