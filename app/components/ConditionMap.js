@@ -9,7 +9,7 @@ const ConditionMap = ({ data, id }) => {
     const width = 800; // Increased width for better visualization
     const height = 600; // Increased height for better visualization
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
-    const padding = 20; // Padding to keep nodes within SVG boundaries
+    const padding = 1; // Padding to keep nodes within SVG boundaries
 
     const svg = d3.select(`#${containerId}`)
       .append('svg')
@@ -50,7 +50,7 @@ const ConditionMap = ({ data, id }) => {
     const links = nodes.map((medication) => ({
       source: nameNode,
       target: medication,
-      distance: (1 - (medication.count / maxCount)) * 150 // Adjusted distance formula
+      distance: (1.5 - (medication.count / maxCount)) * 250 // Adjusted distance formula
     }));
 
     const link = svg.selectAll('.link')
@@ -67,12 +67,12 @@ const ConditionMap = ({ data, id }) => {
 
     node.filter(d => d.group === 1)
       .append('circle')
-      .attr('r', 10) // Reduced size for better spacing
+      .attr('r', 20) // Reduced size for better spacing
       .style('fill', 'lightblue'); // Adjust color as needed
 
     node.filter(d => d.group === 0)
       .append('circle')
-      .attr('r', d => 20 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
+      .attr('r', d => 75 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
       .style('fill', 'blue');
 
     node.append('text')
@@ -82,7 +82,7 @@ const ConditionMap = ({ data, id }) => {
       .style('font-size', function(d) {
         const radius = d.group === 0 ? 20 * Math.sqrt(nameNode.effectiveness) : 10;
         const maxLength = Math.sqrt(Math.pow(radius, 2) / 2); // Max length to fit in circle diagonally
-        const fontSize = Math.min(2 * radius, (2 * radius - 8) / this.getComputedTextLength() * 24, maxLength / this.getComputedTextLength() * 24);
+        const fontSize = Math.min(5 * radius, (5 * radius - 2) / this.getComputedTextLength() * 72, maxLength / this.getComputedTextLength() * 72);
         return fontSize + 'px';
       });
 
