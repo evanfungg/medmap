@@ -40,7 +40,7 @@
     text-align: center;
 }
 
-/* No margin for the first and last button to align correctly with the logo and the container edge */
+
 .btn:first-child,
 .btn:last-child {
     margin: 0;
@@ -50,8 +50,8 @@
     background-color: #0a5209;
 }
 
-/* Ensure the navbar stretches to the full width of the viewport */
+
 body {
-    margin: 0; /* Remove default margin */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    margin: 0; 
+    overflow-x: hidden; 
 }
