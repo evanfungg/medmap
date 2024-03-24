@@ -1,19 +1,19 @@
-
-import React from 'react'
-import NavButton from '/components/NavButton.js'
-
-
-
+import React from 'react';
+import NavButton from './NavButton';
+import './styles.css'; // Ensure this path is correct based on your project structure
 
 const NavBar = () => {
   return (
-    <div>NavBar
-    {/* <img className = "logo" src = "/medmap.png" alt = "Yuh"></img>*/}
-    <NavButton link = './' name = "Home"></NavButton>
-    <NavButton link = './med-map' name = "Med Map"></NavButton>
-    <NavButton link = './med-search' name = "Med Search"></NavButton>
+    <div className="nav-container">
+      <img className='img' src="./medmap.png" alt="Site Logo" />
+      {/* The nav-buttons container will now distribute the buttons evenly */}
+      <div className="nav-buttons">
+        <NavButton link='/' name="Home" />
+        <NavButton link='/med-map' name="Med Map" />
+        <NavButton link='/med-search' name="Med Search" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
