@@ -1,12 +1,12 @@
 import React from 'react';
 import NavButton from './NavButton';
-import './styles.css'; // Ensure this path is correct based on your project structure
+import './styles.css'; 
 
 const NavBar = () => {
   return (
     <div className="nav-container">
       <img className='img' src="./medmap.png" alt="Site Logo" />
-      {/* The nav-buttons container will now distribute the buttons evenly */}
+      
       <div className="nav-buttons">
         <NavButton link='/' name="Home" />
         <NavButton link='/med-map' name="Med Map" />

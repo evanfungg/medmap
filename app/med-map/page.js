@@ -42,7 +42,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className = 'main'>
       <NavBar />
       {data.length > 0 && (
         <div className="graphContainer">
