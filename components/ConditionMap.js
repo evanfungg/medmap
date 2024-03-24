@@ -1,5 +1,5 @@
-// import * as d3 from 'd3';
-// import { useEffect } from 'react';
+import * as d3 from 'd3';
+import { useEffect } from 'react';
 
 const ConditionMap = ({ data, id }) => {
   useEffect(() => {
