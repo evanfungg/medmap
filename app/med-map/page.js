@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import ConditionMap from '../components/ConditionMap';
+import NavBar from '../components/NavBar.js'
 
 const getConditions = async () => {
   try {
@@ -33,7 +34,7 @@ export default function Home() {
 
   return (
     <main>
-      hello
+      <NavBar></NavBar>
 
       {data1.map((conditionData, index) => (
         <div key={index}>
