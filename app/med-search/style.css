@@ -49,7 +49,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(227, 223, 223);
+    background: linear-gradient(to bottom, #24a87a47, #2a8c4b2c);
     padding-top: 0px; 
 }
 
@@ -63,7 +63,7 @@ body, html {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px; 
-    color: #0056b3;
+    color: #0b5a3ebc; 
     text-decoration: underline;
 }
 
@@ -85,7 +85,7 @@ input[type="text"]::placeholder {
     padding: 5px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #20a384;
     color: #ffffff;
     cursor: pointer;
     margin-right: 30px;
@@ -101,7 +101,7 @@ input[type="text"]::placeholder {
     margin-bottom: 10px;
     font-size: 20px;
     font-weight: bold;
-    color: #000000;
+    color: #03240e;
 }
 .search-result2 {
     margin-top: 0px;
@@ -109,7 +109,7 @@ input[type="text"]::placeholder {
     font-size: 20px;
     font-weight: bold;
     align-items: left;
-    color: #000000;
+    color: #03240e;
 }
 
 .image {
