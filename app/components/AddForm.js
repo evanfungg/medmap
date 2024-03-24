@@ -5,6 +5,8 @@ export default function AddForm({ onSubmit }) {
     const [conditions, setConditions] = useState([]);
     const [selectedCondition, setSelectedCondition] = useState('');
     const [medications, setMedications] = useState([]);
+    const [medicationStates, setMedicationStates] = useState(medications.map(() => ''));
+
 
     useEffect(() => {
         // Fetch list of conditions from the database
@@ -31,7 +33,7 @@ export default function AddForm({ onSubmit }) {
 
     const handleConditionChange = async (e) => {
         setSelectedCondition(e.target.value);
-    
+
         // Fetch list of medications associated with the selected condition
         try {
             const res = await fetch(`http://localhost:3000/api/conditions`);
@@ -64,36 +66,42 @@ export default function AddForm({ onSubmit }) {
         console.log(updatedMedications);
     };
 
+    // const handleMedicationStateChange = (index, value) => {
+    //     const newMedicationStates = [...medicationStates];
+    //     newMedicationStates[index] = value;
+    //     setMedicationStates(newMedicationStates);
+    // };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+
         try {
-          // Send condition ID and updated medication data to the backend
-          console.log(selectedCondition);
-          const response = await fetch(`http://localhost:3000/api/conditions/${selectedCondition}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ selectedCondition, medications }),
-          });
-      
-          if (response.ok) {
-            // Medication data for the associated condition was successfully updated
-            console.log('Medication data submitted successfully');
-            
-            // Reset medication state or perform any other necessary actions
-            setMedications([]);
-          } else {
-            // Server returned an error response
-            console.error('Failed to update medication data:', response.statusText);
-          }
+            // Send condition ID and updated medication data to the backend
+            console.log(selectedCondition);
+            const response = await fetch(`http://localhost:3000/api/conditions/${selectedCondition}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ selectedCondition, medications }),
+            });
+
+            if (response.ok) {
+                // Medication data for the associated condition was successfully updated
+                console.log('Medication data submitted successfully');
+
+                // Reset medication state or perform any other necessary actions
+                setMedications([]);
+            } else {
+                // Server returned an error response
+                console.error('Failed to update medication data:', response.statusText);
+            }
         } catch (error) {
-          // An error occurred while sending the request
-          console.error('Error updating medication data:', error);
+            // An error occurred while sending the request
+            console.error('Error updating medication data:', error);
         }
-      };
-    
+    };
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -112,8 +120,8 @@ export default function AddForm({ onSubmit }) {
                     <label>
                         {medication.name} - Is Effective?:
                         <select
-                            value={medication.isEffective || ''}
-                            onChange={(e) => handleMedicationChange(index, e.target.value === 'true')}
+                            value={medicationStates[index]}
+                            onChange={(e) => handleMedicationChange(index, e.target.value)}
                         >
                             <option value="">Select</option>
                             <option value="true">Yes</option>
