@@ -18,16 +18,16 @@ const ConditionMap = ({ data, id }) => {
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const trueCount = data.medications.reduce((acc, medication) => {
-      return acc + medication.is_effective.filter(Boolean).length;
-    }, 0);
+      const trueCount = data.medications.reduce((acc, medication) => {
+        return acc + medication.is_effective.filter(Boolean).length;
+      }, 0);
+  
+      const falseCount = data.medications.reduce((acc, medication) => {
+        return acc + medication.is_effective.length;
+      }, 0) - trueCount;
 
-    const falseCount = data.medications.reduce((acc, medication) => {
-      return acc + medication.is_effective.length;
-    }, 0) - trueCount;
-
-    const conditionNode = {
-      id: data.condition,
+    const nameNode = {
+      id: data.name,
       group: 0,
       effectiveness: trueCount / (trueCount + falseCount),
       count: trueCount + falseCount
@@ -47,8 +47,8 @@ const ConditionMap = ({ data, id }) => {
 
     // Calculate weighted distance based on the count of entries
     const maxCount = Math.max(...nodes.map(node => node.count));
-    const links = nodes.map(medication => ({
-      source: conditionNode,
+    const links = nodes.map((medication) => ({
+      source: nameNode,
       target: medication,
       distance: (1 - (medication.count / maxCount)) * 150 // Adjusted distance formula
     }));
@@ -60,7 +60,7 @@ const ConditionMap = ({ data, id }) => {
       .style('stroke', '#aaa');
 
     const node = svg.selectAll('.node')
-      .data([conditionNode, ...nodes])
+      .data([nameNode, ...nodes])
       .enter()
       .append('g')
       .attr('class', 'node');
@@ -72,7 +72,7 @@ const ConditionMap = ({ data, id }) => {
 
     node.filter(d => d.group === 0)
       .append('circle')
-      .attr('r', d => 20 * Math.sqrt(conditionNode.effectiveness)) // Adjusted size based on effectiveness
+      .attr('r', d => 20 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
       .style('fill', 'blue');
 
     node.append('text')
@@ -80,7 +80,7 @@ const ConditionMap = ({ data, id }) => {
       .attr('text-anchor', 'middle')
       .attr('dy', '0.35em') // Center text vertically within the circle
       .style('font-size', function(d) {
-        const radius = d.group === 0 ? 20 * Math.sqrt(conditionNode.effectiveness) : 10;
+        const radius = d.group === 0 ? 20 * Math.sqrt(nameNode.effectiveness) : 10;
         const maxLength = Math.sqrt(Math.pow(radius, 2) / 2); // Max length to fit in circle diagonally
         const fontSize = Math.min(2 * radius, (2 * radius - 8) / this.getComputedTextLength() * 24, maxLength / this.getComputedTextLength() * 24);
         return fontSize + 'px';
@@ -96,7 +96,7 @@ const ConditionMap = ({ data, id }) => {
       .force('center', d3.forceCenter((width - padding) / 2, (height - padding) / 2)) // Center force with padding
       .on('tick', ticked);
 
-    simulation.nodes([conditionNode, ...nodes]);
+    simulation.nodes([nameNode, ...nodes]);
 
     function ticked() {
       link
