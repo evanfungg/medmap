@@ -45,18 +45,11 @@ const ConditionMap = ({ data, id }) => {
       };
     });
 
+    // Calculate weighted distance based on the count of entries
+    const maxCount = Math.max(...nodes.map(node => node.count));
     const links = data.medications.map((medication) => ({
       source: data.name,
       target: medication.name,
-    }));
-
-    nodes.unshift({ id: data.name, group: 0 });
-
-    // Calculate weighted distance based on the count of entries
-    const maxCount = Math.max(...nodes.map(node => node.count));
-    const links = nodes.map(medication => ({
-      source: conditionNode,
-      target: medication,
       distance: (1 - (medication.count / maxCount)) * 150 // Adjusted distance formula
     }));
 
