@@ -89,9 +89,9 @@ export default function AddForm({ onSubmit }) {
             if (response.ok) {
                 // Medication data for the associated condition was successfully updated
                 console.log('Medication data submitted successfully');
-
                 // Reset medication state or perform any other necessary actions
                 setMedications([]);
+                alert("Medication Added: Please refresh page");
             } else {
                 // Server returned an error response
                 console.error('Failed to update medication data:', response.statusText);
