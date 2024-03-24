@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+
     "d3": "^7.9.0",
     "d3-scale": "^4.0.2",
     "mongoose": "^8.2.3",
@@ -16,6 +17,9 @@
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^6.1.8",
+    "cohere": "^1.1.1",
+    "flask": "^0.2.10",
+
     "vis-data": "^7.1.9",
     "vis-network": "^9.1.9"
   }
