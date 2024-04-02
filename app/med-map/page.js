@@ -7,7 +7,7 @@ import './styles.css';
 
 const getConditions = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/conditions", {
+    const res = await fetch("https://medmap.vercel.app/api/conditions", {
       cache: "no-store",
     });
 
