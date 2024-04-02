@@ -13,7 +13,7 @@ export default function Home() {
         event.preventDefault();
         alert("Retrieving brand name: please wait");
 
-        const response = await fetch('http://127.0.0.1:5328/flask/web-search', {
+        const response = await fetch('https://medmap-738b41391b9a.herokuapp.com/flask/web-search', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ searchQuery: searchQuery }),
@@ -28,7 +28,7 @@ export default function Home() {
         alert("Retrieving generic name (scientific) : please wait");
 
         
-        const clientSearchResponse = await fetch('http://127.0.0.1:5328/flask/client-search', {
+        const clientSearchResponse = await fetch('https://medmap-738b41391b9a.herokuapp.com/flask/client-search', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ clientSearchQuery: clientSearchQuery }),
