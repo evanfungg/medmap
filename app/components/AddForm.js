@@ -36,7 +36,7 @@ export default function AddForm({ onSubmit }) {
 
         // Fetch list of medications associated with the selected condition
         try {
-            const res = await fetch(`http://localhost:3000/api/conditions`);
+            const res = await fetch(`https://medmap.vercel.app/api/conditions`);
             if (res.ok) {
                 const conditionsData = await res.json();
                 const selectedConditionData = conditionsData.find(condition => condition._id === e.target.value);
@@ -78,7 +78,7 @@ export default function AddForm({ onSubmit }) {
         try {
             // Send condition ID and updated medication data to the backend
             console.log(selectedCondition);
-            const response = await fetch(`http://localhost:3000/api/conditions/${selectedCondition}`, {
+            const response = await fetch(`https://medmap.vercel.app/api/conditions/${selectedCondition}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
