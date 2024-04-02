@@ -13,7 +13,7 @@ export default function AddForm({ onSubmit }) {
         const fetchConditions = async () => {
             try {
                 console.log("test1")
-                const res = await fetch('http://localhost:3000/api/conditions');
+                const res = await fetch('https://medmap.vercel.app/api/conditions');
 
                 if (res.ok) {
                     const conditionsData = await res.json();
