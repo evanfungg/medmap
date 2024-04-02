@@ -1,20 +1,10 @@
 
-
-body, html {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #24a87a47, #2a8c4b2c);
-    
-   
-    
-}
-
-.main {
+.main-search {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 0px; 
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #33acae47, #0daaac);
     
 }
 
@@ -27,9 +17,8 @@ body, html {
 .title {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 20px; 
-    color: #0b5a3ebc; 
-    text-decoration: underline;
+    color: #33a0ae; 
+    
 }
 
 input[type="text"] {
@@ -46,7 +35,7 @@ input[type="text"]::placeholder {
 }
 
 .submit {
-    background-color: #2a8c4a;
+    background-color: #33acae;
     color: white;
     padding: 12px 24px;
     font-size: 16px;

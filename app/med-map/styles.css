@@ -1,28 +1,30 @@
 
+.main-med {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #33acae47, #0daaac);
+}
+
 .graphContainer {
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin: 20px 0;
+    margin: 20px;
+    position: relative; /* Add this line */
   }
   
   .graphCard {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin: 10px;
-    padding: 20px;
     border-radius: 5px;
     width: fit-content;
     background-color: white;
+    
   }
   
-  main {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom, #24a87a47, #2a8c4b2c);
-  }
+  
   
   button {
     border: none;
@@ -38,9 +40,9 @@
     align-items: center; 
     position: absolute;
     z-index: 1;
-    top: 65%;
-    right: 20px; 
-    transform: translate(0, -50%); 
+    top: 170px; /* Change this to align to the top */
+    right: 20px; /* Adjust as needed to align with the graph's right edge */
+    transform: translate(0, -50%); /* Remove or adjust this line as necessary */
 }
 
 .popup-content {
@@ -80,12 +82,19 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    max-width: 500px; 
-    width: 90%; 
-    z-index: 1001; 
-    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1001;
+    position: absolute;
+    top: 0px;
+    max-height: 80vh; 
+    overflow-y: auto; 
   }
+
+  
   
  
   .popup-header {
@@ -120,7 +129,7 @@
   }
   
   .popup-form button {
-    background-color: #2a8c4a;
+    background-color: #388bcb;
     color: white;
     padding: 12px 24px;
     font-size: 16px;
@@ -131,12 +140,12 @@
   }
   
   .popup-form button:hover {
-    background-color: #249c3b;
+    background-color: #33acae;
   }
   
 
   .add-button {
-    background-color: #2a8c4a;
+    background: #33acae;
     color: white;
     padding: 12px 24px;
     font-size: 16px;
@@ -150,9 +159,10 @@
     outline: none;
     flex: none; 
     text-align: center;
+    
 
   }
 
   .add-button:hover {
-    background-color: #1cb719d4;
+    background-color: #2e6c7dfe;
 }

@@ -1,14 +1,17 @@
 .main {
-    background: linear-gradient(to bottom, #24a87a47, #2a8c4b2c);
+    background: linear-gradient(to bottom, #33acae47, #0daaac);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin-left: -20px;
 
   }
 
+
+
 .content {
     align-self: center;
-    text-shadow: #24a87a47;
+    text-shadow: #0daaac;
     font-family: 'Montserrat', sans-serif; 
     color: #333333; 
     font-size: 2.5em; 
@@ -16,7 +19,7 @@
     line-height: 1.2; 
     text-align: center; 
     text-transform: uppercase; 
-    text-shadow: 2px 2px 4px rgba(36, 168, 122, 0.28); 
+    text-shadow: 2px 2px 4px #33acae47; 
     align-self: center;
     margin-top: 100px; 
     max-width: 80%; 

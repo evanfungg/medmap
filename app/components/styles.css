@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-start; 
     width: 100%; 
-    background-color: #24a87a8e; 
+    background: linear-gradient(to right, #e5f3f3, #33acae47);
     padding: 10px 20px;
 }
 
@@ -25,7 +25,7 @@
 
 
 .btn {
-    background-color: #2a8c4a;
+    background: linear-gradient(to right, #33acae47, #22252547);
     color: white;
     padding: 12px 24px;
     font-size: 16px;
@@ -48,7 +48,7 @@
 }
 
 .btn:hover {
-    background-color: #0a5209;
+    background-color: #096163;
 }
 
 

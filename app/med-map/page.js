@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <main className='main'>
+    <main className='main-med'>
       <NavBar />
       {data.length > 0 && (
         <div className="graphContainer">
@@ -70,7 +70,7 @@ export default function Home() {
         <div className="popup-backdrop" onClick={closePopup}>
           <div className="popup-box" onClick={e => e.stopPropagation()}>
             <div className="popup-header">
-              <h4>Select A Condition</h4>
+              <h4>Select a Condition</h4>
               <button className="popup-close" onClick={closePopup}>&times;</button>
             </div>
             <AddForm />

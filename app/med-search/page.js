@@ -40,7 +40,7 @@ export default function Home() {
 
 
     return (
-        <main className="main">
+        <main className="main-search">
             <NavBar></NavBar>
             <h3 className="title">Medication Search</h3> 
             <form className="form-container" onSubmit={handleWebSearchSubmit}>

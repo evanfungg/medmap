@@ -1,15 +1,14 @@
 from flask import Flask, request, jsonify
 import cohere
 from flask_cors import CORS
-import os
 
 
 
 
 app = Flask(__name__)
 CORS(app, resources={r"/flask/*": {"origins": ["http://localhost:3000"]}})
-COHERE_API_KEY = os.environ.get('COHERE_API_KEY')
-co = cohere.Client(COHERE_API_KEY)
+app.debug = True
+co = cohere.Client("9nvNszPUluytWDnVaJOR5QntpW4vdayTTaQHYDIA")
 
 @app.route('/')
 def home():
@@ -58,6 +57,6 @@ def client_search():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug=True, port=5328)
 
     

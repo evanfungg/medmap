@@ -7,7 +7,7 @@ const ConditionMap = ({ data, id }) => {
     d3.select(`#${containerId}`).select('svg').remove();
 
     const width = 800; // Increased width for better visualization
-    const height = 600; // Increased height for better visualization
+    const height = 550; // Increased height for better visualization
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
     const padding = 1; // Padding to keep nodes within SVG boundaries
 
@@ -68,8 +68,8 @@ const ConditionMap = ({ data, id }) => {
     node.filter(d => d.group === 0)
       .append('circle')
       .attr('r', d => 85 * Math.sqrt(nameNode.effectiveness)) // Adjusted size based on effectiveness
-      .style('fill', '#2a8c4a');
-
+      .style('fill', '#33acae');
+     
     node.each(function (d) {
       if (d.group === 1) {
         const pie = d3.pie();
@@ -86,7 +86,7 @@ const ConditionMap = ({ data, id }) => {
           .attr('d', arc)
           .style('fill', (piePart) => {
             // Check if piePart.data is effective or not and assign color accordingly
-            return piePart.data === d.pieData[0] ? 'green' : 'red';
+            return piePart.data === d.pieData[0] ? "#33acae47" : 'red';
           });
       }
     });    
