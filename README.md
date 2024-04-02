@@ -6,19 +6,5 @@ MedMap is an interactive site where we have mapped user-inputted data of medicat
 
 ## How it works
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-run npm install.
-
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Link
 
